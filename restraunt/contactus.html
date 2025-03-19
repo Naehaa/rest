@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Contact Us Section */
+.contact-us {
+    background: url('your-image.jpg') center/cover no-repeat;
+    padding: 60px 20px;
+    text-align: center;
+}
+.avatar-img {
+  width: 25px; /* Adjust for best fit */
+  height: 25px;
+  object-fit: cover;
+  border: 2px solid #fff; /* Optional: Adds a clean white border */
+}
+#a{
+    height: 400px;
+    width: 400px;
+}
+.fas fa-shopping-cart{
+  color: white;
+}
+i{
+  color: white;
+}
+.contact-us h2 {
+    font-size: 2rem;
+    color: #D4A373; /* Your website's theme color */
+}
+
+.contact-us p {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    color: #333;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 120px;
+}
+
+button {
+    background: #D4A373;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #B6895B;
+}
+
+/* Error messages */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    display: none;
+}
+
+    </style>
+</head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo.png" height="50" alt="Restaurant Logo" loading="lazy">
+                </a>
+    
+                <!-- Navbar Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- Navbar Items -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link text-light" href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#"><i class="fa-solid fa-bars"></i> Menu</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#"><i class="fa-solid fa-building"></i> Our Outlets</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+                    </ul>
+    
+                    <!-- Right Icons -->
+                    <div class="d-flex align-items-center">
+                        <a class="text-reset me-3" href="#"><i class="fas fa-shopping-cart"></i></a>
+    
+                        <!-- Notifications Dropdown -->
+                        <div class="dropdown">
+                            <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">New message received</a></li>
+                                <li><a class="dropdown-item" href="#">Your order is ready</a></li>
+                                <li><a class="dropdown-item" href="#">System update available</a></li>
+                            </ul>
+                        </div>
+    
+                        <!-- Avatar Dropdown -->
+                        <div class="dropdown ms-2">
+                            <a href="#" class="d-flex align-items-center" role="button" data-bs-toggle="dropdown">
+                                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle avatar-img" alt="User Avatar" loading="lazy">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="login.hTml">My Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="contact-us">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>We’d love to hear from you! Fill out the form below and we’ll get back to you.</p>
+    
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                        <small class="error-message"></small>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                        <small class="error-message"></small>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number">
+                        <small class="error-message"></small>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Your message"></textarea>
+                        <small class="error-message"></small>
+                    </div>
+    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    
+        <script src="script.js"></script>
+    </body>
+    </html>
+    
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let isValid = true;
+
+    // Clear previous errors
+    document.querySelectorAll(".error-message").forEach((el) => (el.textContent = ""));
+    
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const message = document.getElementById("message");
+
+    let phonePattern = /^((\+92)|0)3[0-9]{9}$/;
+
+    if (name.value.trim() === "") {
+        setError(name, "Name is required.");
+        isValid = false;
+    } else if (!/^[a-zA-Z\s]+$/.test(name.value)) {
+        setError(name, "Name must only contain letters and spaces.");
+        isValid = false;
+    }
+
+    if (email.value.trim() === "") {
+        setError(email, "Email is required.");
+        isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email.value)) {
+        setError(email, "Enter a valid email.");
+        isValid = false;
+    }
+
+    if (phone.value.trim() === "") {
+        setError(phone, "Phone number is required.");
+        isValid = false;
+    } else if (!phonePattern.test(phone.value)) {
+        setError(phone, "Enter a valid 11-digit Pakistani phone number.");
+        isValid = false;
+    }
+
+    if (message.value.trim() === "") {
+        setError(message, "Message cannot be empty.");
+        isValid = false;
+    }
+
+    if (isValid) {
+        Swal.fire({
+            title: "Success!",
+            text: "Your message has been sent successfully.",
+            icon: "success",
+            confirmButtonColor: "#D4A373"
+        });
+        document.getElementById("contactForm").reset();
+    }
+});
+
+// Live validation while typing
+const inputs = document.querySelectorAll("input, textarea");
+inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+        if (input.value.trim() !== "") {
+            input.nextElementSibling.textContent = "";
+        }
+    });
+});
+
+function setError(input, message) {
+    const small = input.nextElementSibling;
+    small.textContent = message;
+    small.style.color = "red";
+    small.style.display = "block";
+}
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

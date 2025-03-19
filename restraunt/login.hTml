@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Login & Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 350px;
+            backdrop-filter: blur(10px);
+        }
+        h2 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .input-group {
+            position: relative;
+            margin: 1rem 0;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            padding-left: 35px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+        .error {
+            color: red;
+            font-size: 0.8rem;
+            text-align: left;
+            margin-top: 5px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: white;
+            color: black;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: gray;
+        }
+        .switch {
+            margin-top: 1rem;
+            color: white;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="formTitle">Restaurant Login</h2>
+        <form id="authForm">
+            <div id="nameField" class="input-group" style="display: none;">
+                <i class="fa fa-user"></i>
+                <input type="text" id="fullName" placeholder="Full Name">
+                <div class="error" id="nameError"></div>
+            </div>
+            <div class="input-group">
+                <i class="fa fa-user"></i>
+                <input type="text" id="username" placeholder="Username" required>
+                <div class="error" id="usernameError"></div>
+            </div>
+            <div class="input-group">
+                <i class="fa fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required>
+                <div class="error" id="passwordError"></div>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p class="switch" id="toggleForm">Don't have an account? Sign up</p>
+        </form>
+    </div>
+    
+    <script>
+        const authForm = document.getElementById("authForm");
+        const toggleForm = document.getElementById("toggleForm");
+        const formTitle = document.getElementById("formTitle");
+        const nameField = document.getElementById("nameField");
+        const fullName = document.getElementById("fullName");
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+        const nameError = document.getElementById("nameError");
+        const usernameError = document.getElementById("usernameError");
+        const passwordError = document.getElementById("passwordError");
+        
+        let isSignUp = false;
+
+        toggleForm.addEventListener("click", () => {
+            isSignUp = !isSignUp;
+            formTitle.textContent = isSignUp ? "Restaurant Sign Up" : "Restaurant Login";
+            nameField.style.display = isSignUp ? "block" : "none";
+            toggleForm.textContent = isSignUp ? "Already have an account? Login" : "Don't have an account? Sign up";
+        });
+        
+        authForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            nameError.textContent = "";
+            usernameError.textContent = "";
+            passwordError.textContent = "";
+            
+            let valid = true;
+            
+            if (isSignUp && fullName.value.trim() === "") {
+                nameError.textContent = "Full name is required";
+                valid = false;
+            }
+            
+            if (username.value.trim() === "") {
+                usernameError.textContent = "Username is required";
+                valid = false;
+            }
+            
+            if (password.value.trim() === "") {
+                passwordError.textContent = "Password is required";
+                valid = false;
+            } else if (password.value.length < 6) {
+                passwordError.textContent = "Password must be at least 6 characters";
+                valid = false;
+            }
+            
+            if (valid) {
+                alert(isSignUp ? "Sign Up successful!" : "Login successful!");
+            }
+        });
+    </script>
+</body>
+</html>

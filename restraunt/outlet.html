@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Outlets</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Outlet Card */
+        .outlet-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .outlet-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .outlet-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        /* Footer */
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        /* Animation Delay */
+        [data-aos] {
+            transition-duration: 0.8s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" height="50" alt="Restaurant Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-light" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link active text-light" href="outlet.html">Our Outlets</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="text-center py-5 bg-light">
+        <h1 class="fw-bold">Discover Our Outlets</h1>
+        <p class="text-muted">Find the perfect place to enjoy our delicious meals.</p>
+    </section>
+
+    <!-- Outlet Cards -->
+    <div class="container py-5">
+        <div class="row g-4">
+
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card outlet-card">
+                    <img src="out1.jpg" class="outlet-img" alt="Outlet 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Outlet 1 - Downtown</h5>
+                        <p class="card-text">📍 123 Main Street, City</p>
+                        <p class="card-text">🕒 10 AM - 11 PM</p>
+                        <p class="card-text">📞 (123) 456-7890</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card outlet-card">
+                    <img src="out2.jpg" class="outlet-img" alt="Outlet 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Outlet 2 - Mall Branch</h5>
+                        <p class="card-text">📍 456 Market Road, City</p>
+                        <p class="card-text">🕒 9 AM - 10 PM</p>
+                        <p class="card-text">📞 (987) 654-3210</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="card outlet-card">
+                    <img src="outlet3.jpg" class="outlet-img" alt="Outlet 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Outlet 3 - Beachfront</h5>
+                        <p class="card-text">📍 789 Ocean Drive, City</p>
+                        <p class="card-text">🕒 11 AM - 12 AM</p>
+                        <p class="card-text">📞 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <p>&copy; 2025 Your Restaurant Name. All Rights Reserved.</p>
+        <div>
+            <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>
